@@ -168,6 +168,26 @@ func (k Keeper) QueueSlashPacket(ctx sdk.Context, validator abci.Validator, vals
 	)
 }
 
+func (k *Keeper) QueueNotifyRewardsPackets(ctx sdk.Context) {
+	packet := ccv.NewNotifyRewardsPacketData(ctx.BlockHeight())
+	k.AppendPendingPacket(ctx, ccv.ConsumerPacketData{
+		Type: ccv.NotifyRewardsPacket,
+		Data: &ccv.ConsumerPacketData_NotifyRewardsPacketData{NotifyRewardsPacketData: packet},
+	})
+
+	k.Logger(ctx).Info("NotifyRewardsPacket enqueued", "blockHeight", packet.BlockHeight)
+
+	ctx.EventManager().EmitEvent(
+		sdk.NewEvent(
+			ccv.EventNotifyRewards,
+			sdk.NewAttribute(sdk.AttributeKeyModule, types.ModuleName),
+			sdk.NewAttribute(ccv.AttributeChainID, ctx.ChainID()),
+			sdk.NewAttribute(ccv.AttributeConsumerHeight, strconv.Itoa(int(ctx.BlockHeight()))),
+			sdk.NewAttribute(ccv.AttributeTimestamp, ctx.BlockTime().String()),
+		),
+	)
+}
+
 // SendPackets iterates queued packets and sends them in FIFO order.
 // received VSC packets in order, and write acknowledgements for all matured VSC packets.
 //
