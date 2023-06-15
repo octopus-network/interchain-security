@@ -7,7 +7,7 @@ import (
 	fmt "fmt"
 	_ "github.com/cometbft/cometbft/proto/tendermint/crypto"
 	_ "github.com/cosmos/gogoproto/gogoproto"
-	proto "github.com/gogo/protobuf/proto"
+	proto "github.com/cosmos/gogoproto/proto"
 	types1 "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
 	types "github.com/octopus-network/interchain-security/x/ccv/types"
 	io "io"
