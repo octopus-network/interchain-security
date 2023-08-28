@@ -11,8 +11,8 @@ import (
 	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
 	"github.com/cosmos/ibc-go/v7/modules/core/exported"
 
-	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
-	ccv "github.com/cosmos/interchain-security/x/ccv/types"
+	providertypes "github.com/cosmos/interchain-security/v3/x/ccv/provider/types"
+	ccv "github.com/cosmos/interchain-security/v3/x/ccv/types"
 )
 
 // OnRecvVSCMaturedPacket handles a VSCMatured packet
@@ -341,9 +341,9 @@ func (k Keeper) OnRecvSlashPacket(ctx sdk.Context, packet channeltypes.Packet, d
 
 	// Queue a slash entry to the global queue, which will be seen by the throttling logic
 	k.QueueGlobalSlashEntry(ctx, providertypes.NewGlobalSlashEntry(
-		ctx.BlockTime(),   // recv time
-		chainID,           // consumer chain id that sent the packet
-		packet.Sequence,   // IBC sequence number of the packet
+		ctx.BlockTime(), // recv time
+		chainID,         // consumer chain id that sent the packet
+		packet.Sequence, // IBC sequence number of the packet
 		providerConsAddr)) // Provider consensus address of val to be slashed
 
 	// Queue slash packet data in the same (consumer chain specific) queue as vsc matured packet data,
