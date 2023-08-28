@@ -8,17 +8,17 @@ import (
 	"cosmossdk.io/math"
 	"github.com/golang/mock/gomock"
 
-	"github.com/octopus-network/interchain-security/x/ccv/provider/keeper"
-	providertypes "github.com/octopus-network/interchain-security/x/ccv/provider/types"
-	ccvtypes "github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/x/ccv/provider/keeper"
+	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
+	ccvtypes "github.com/cosmos/interchain-security/x/ccv/types"
 
 	tmtypes "github.com/cometbft/cometbft/types"
 	sdktypes "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/exp/slices"
 
-	cryptoutil "github.com/octopus-network/interchain-security/testutil/crypto"
-	testkeeper "github.com/octopus-network/interchain-security/testutil/keeper"
+	cryptoutil "github.com/cosmos/interchain-security/testutil/crypto"
+	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
 )
 
 // TestHandlePacketDataForChain tests the HandlePacketDataForChain function. Note: Only one consumer is tested here,

@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	appConsumer "github.com/octopus-network/interchain-security/app/consumer-democracy"
-	ibctesting "github.com/octopus-network/interchain-security/legacy_ibc_testing/testing"
-	icstestingutils "github.com/octopus-network/interchain-security/testutil/ibc_testing"
+	appConsumer "github.com/cosmos/interchain-security/app/consumer-democracy"
+	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
+	icstestingutils "github.com/cosmos/interchain-security/testutil/ibc_testing"
 )
 
 func TestDemocracyGovernanceWhitelistingKeys(t *testing.T) {

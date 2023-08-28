@@ -10,8 +10,8 @@ import (
 	ibctmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 	"github.com/stretchr/testify/require"
 
-	"github.com/octopus-network/interchain-security/legacy_ibc_testing/simapp"
-	ibctesting "github.com/octopus-network/interchain-security/legacy_ibc_testing/testing"
+	"github.com/cosmos/interchain-security/legacy_ibc_testing/simapp"
+	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
 )
 
 // UpdateReceiverClient DELIVERs a header to the receiving endpoint

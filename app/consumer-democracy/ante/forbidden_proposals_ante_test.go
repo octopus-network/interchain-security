@@ -12,8 +12,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/params/types/proposal"
 	"github.com/stretchr/testify/require"
 
-	app "github.com/octopus-network/interchain-security/app/consumer-democracy"
-	"github.com/octopus-network/interchain-security/app/consumer-democracy/ante"
+	app "github.com/cosmos/interchain-security/app/consumer-democracy"
+	"github.com/cosmos/interchain-security/app/consumer-democracy/ante"
 
 	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
 )

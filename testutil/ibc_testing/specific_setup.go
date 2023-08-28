@@ -9,14 +9,14 @@ import (
 
 	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
 
-	ibctesting "github.com/octopus-network/interchain-security/legacy_ibc_testing/testing"
+	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
 
 	tmdb "github.com/cometbft/cometbft-db"
 	"github.com/cometbft/cometbft/libs/log"
 
-	appConsumer "github.com/octopus-network/interchain-security/app/consumer"
-	appConsumerDemocracy "github.com/octopus-network/interchain-security/app/consumer-democracy"
-	appProvider "github.com/octopus-network/interchain-security/app/provider"
+	appConsumer "github.com/cosmos/interchain-security/app/consumer"
+	appConsumerDemocracy "github.com/cosmos/interchain-security/app/consumer-democracy"
+	appProvider "github.com/cosmos/interchain-security/app/provider"
 )
 
 // ProviderAppIniter implements ibctesting.AppIniter for a provider app

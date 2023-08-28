@@ -7,8 +7,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 
-	cryptoutil "github.com/octopus-network/interchain-security/testutil/crypto"
-	providertypes "github.com/octopus-network/interchain-security/x/ccv/provider/types"
+	cryptoutil "github.com/cosmos/interchain-security/testutil/crypto"
+	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
 )
 
 // Tests that all singular keys, or prefixes to fully resolves keys are non duplicate byte values.

@@ -15,10 +15,10 @@ import (
 	host "github.com/cosmos/ibc-go/v7/modules/core/24-host"
 	ibcexported "github.com/cosmos/ibc-go/v7/modules/core/exported"
 
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/keeper"
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	providertypes "github.com/octopus-network/interchain-security/x/ccv/provider/types"
-	"github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
+	"github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // OnChanOpenInit implements the IBCModule interface

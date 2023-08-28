@@ -4,7 +4,7 @@ import (
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
 )
 
 // Tests the tracking of historical info in the context of new blocks being committed

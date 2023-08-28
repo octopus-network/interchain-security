@@ -5,8 +5,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrorstypes "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/octopus-network/interchain-security/x/ccv/provider/keeper"
-	"github.com/octopus-network/interchain-security/x/ccv/provider/types"
+	"github.com/cosmos/interchain-security/x/ccv/provider/keeper"
+	"github.com/cosmos/interchain-security/x/ccv/provider/types"
 )
 
 func NewHandler(k *keeper.Keeper) sdk.Handler {

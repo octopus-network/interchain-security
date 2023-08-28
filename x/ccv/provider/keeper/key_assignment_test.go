@@ -13,14 +13,14 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/stretchr/testify/require"
 
-	cryptotestutil "github.com/octopus-network/interchain-security/testutil/crypto"
-	testkeeper "github.com/octopus-network/interchain-security/testutil/keeper"
+	cryptotestutil "github.com/cosmos/interchain-security/testutil/crypto"
+	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
 
 	"github.com/golang/mock/gomock"
 
-	providerkeeper "github.com/octopus-network/interchain-security/x/ccv/provider/keeper"
-	"github.com/octopus-network/interchain-security/x/ccv/provider/types"
-	ccvtypes "github.com/octopus-network/interchain-security/x/ccv/types"
+	providerkeeper "github.com/cosmos/interchain-security/x/ccv/provider/keeper"
+	"github.com/cosmos/interchain-security/x/ccv/provider/types"
+	ccvtypes "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 func TestValidatorConsumerPubKeyCRUD(t *testing.T) {

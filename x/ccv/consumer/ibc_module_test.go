@@ -12,11 +12,11 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	testkeeper "github.com/octopus-network/interchain-security/testutil/keeper"
-	"github.com/octopus-network/interchain-security/x/ccv/consumer"
-	consumerkeeper "github.com/octopus-network/interchain-security/x/ccv/consumer/keeper"
-	providertypes "github.com/octopus-network/interchain-security/x/ccv/provider/types"
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
+	"github.com/cosmos/interchain-security/x/ccv/consumer"
+	consumerkeeper "github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
+	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // TestOnChanOpenInit validates the consumer's OnChanOpenInit implementation against the spec.
@@ -45,28 +45,28 @@ func TestOnChanOpenInit(t *testing.T) {
 	}{
 		{
 			"success", func(keeper *consumerkeeper.Keeper, params *params, mocks testkeeper.MockedKeepers) {
-			gomock.InOrder(
-				mocks.MockScopedKeeper.EXPECT().ClaimCapability(
-					params.ctx, params.chanCap, host.ChannelCapabilityPath(
-						params.portID, params.channelID)).Return(nil).Times(1),
-				mocks.MockConnectionKeeper.EXPECT().GetConnection(
-					params.ctx, "connectionIDToProvider").Return(
-					conntypes.ConnectionEnd{ClientId: "clientIDToProvider"}, true).Times(1),
-			)
-		}, true,
+				gomock.InOrder(
+					mocks.MockScopedKeeper.EXPECT().ClaimCapability(
+						params.ctx, params.chanCap, host.ChannelCapabilityPath(
+							params.portID, params.channelID)).Return(nil).Times(1),
+					mocks.MockConnectionKeeper.EXPECT().GetConnection(
+						params.ctx, "connectionIDToProvider").Return(
+						conntypes.ConnectionEnd{ClientId: "clientIDToProvider"}, true).Times(1),
+				)
+			}, true,
 		},
 		{
 			"should succeed when IBC module version isn't provided", func(keeper *consumerkeeper.Keeper, params *params, mocks testkeeper.MockedKeepers) {
-			params.version = ""
-			gomock.InOrder(
-				mocks.MockScopedKeeper.EXPECT().ClaimCapability(
-					params.ctx, params.chanCap, host.ChannelCapabilityPath(
-						params.portID, params.channelID)).Return(nil).Times(1),
-				mocks.MockConnectionKeeper.EXPECT().GetConnection(
-					params.ctx, "connectionIDToProvider").Return(
-					conntypes.ConnectionEnd{ClientId: "clientIDToProvider"}, true).Times(1),
-			)
-		}, true,
+				params.version = ""
+				gomock.InOrder(
+					mocks.MockScopedKeeper.EXPECT().ClaimCapability(
+						params.ctx, params.chanCap, host.ChannelCapabilityPath(
+							params.portID, params.channelID)).Return(nil).Times(1),
+					mocks.MockConnectionKeeper.EXPECT().GetConnection(
+						params.ctx, "connectionIDToProvider").Return(
+						conntypes.ConnectionEnd{ClientId: "clientIDToProvider"}, true).Times(1),
+				)
+			}, true,
 		},
 		{
 			"invalid non-empty IBC module version",

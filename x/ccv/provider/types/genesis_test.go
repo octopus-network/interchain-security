@@ -11,10 +11,10 @@ import (
 	ibctmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 	"github.com/stretchr/testify/require"
 
-	"github.com/octopus-network/interchain-security/testutil/crypto"
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	"github.com/octopus-network/interchain-security/x/ccv/provider/types"
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/testutil/crypto"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	"github.com/cosmos/interchain-security/x/ccv/provider/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // Tests validation of consumer states and params within a provider genesis state

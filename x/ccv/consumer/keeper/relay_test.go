@@ -18,10 +18,10 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/octopus-network/interchain-security/testutil/crypto"
-	testkeeper "github.com/octopus-network/interchain-security/testutil/keeper"
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	"github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/testutil/crypto"
+	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	"github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // TestOnRecvVSCPacket tests the behavior of OnRecvVSCPacket over various packet scenarios

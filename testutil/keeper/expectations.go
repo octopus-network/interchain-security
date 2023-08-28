@@ -12,11 +12,11 @@ import (
 	ibctmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 	"github.com/golang/mock/gomock"
 
-	providertypes "github.com/octopus-network/interchain-security/x/ccv/provider/types"
+	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
 
 	host "github.com/cosmos/ibc-go/v7/modules/core/24-host"
 
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 
 	extra "github.com/oxyno-zeta/gomock-extra-matcher"
 )

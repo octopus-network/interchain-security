@@ -12,8 +12,8 @@ import (
 	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
 	"github.com/cosmos/ibc-go/v7/modules/core/exported"
 
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // OnRecvVSCPacket sets the pending validator set changes that will be flushed to ABCI on Endblock

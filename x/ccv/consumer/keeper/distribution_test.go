@@ -9,8 +9,8 @@ import (
 	authTypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/golang/mock/gomock"
 
-	testkeeper "github.com/octopus-network/interchain-security/testutil/keeper"
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/types"
+	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/types"
 )
 
 // TestGetEstimatedNextFeeDistribution tests next fee distribution parameters.
