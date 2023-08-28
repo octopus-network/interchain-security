@@ -1,6 +1,6 @@
 module github.com/cosmos/interchain-security
 
-go 1.19
+go 1.20
 
 require (
 	cosmossdk.io/math v1.0.1
