@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e pipefail
+set -eo pipefail
 
 echo "Generating gogo proto code"
 cd proto
@@ -16,6 +16,6 @@ done
 cd ..
 
 # move proto files to the right places
-cp -r github.com/octopus-network/interchain-security/* ./
+cp -r github.com/cosmos/interchain-security/* ./
 rm -rf github.com
 
