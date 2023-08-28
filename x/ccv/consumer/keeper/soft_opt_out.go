@@ -6,7 +6,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	"github.com/cosmos/interchain-security/v3/x/ccv/consumer/types"
 )
 
 // SetSmallestNonOptOutPower sets the smallest validator power that cannot soft opt out.

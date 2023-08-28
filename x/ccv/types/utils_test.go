@@ -7,8 +7,8 @@ import (
 	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
 	"github.com/stretchr/testify/require"
 
-	ibcsimapp "github.com/cosmos/interchain-security/legacy_ibc_testing/simapp"
-	"github.com/cosmos/interchain-security/x/ccv/types"
+	ibcsimapp "github.com/cosmos/interchain-security/v3/legacy_ibc_testing/simapp"
+	"github.com/cosmos/interchain-security/v3/x/ccv/types"
 )
 
 func TestAccumulateChanges(t *testing.T) {

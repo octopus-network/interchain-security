@@ -10,20 +10,20 @@ import (
 
 	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
 
-	ibctestingcore "github.com/cosmos/interchain-security/legacy_ibc_testing/core"
-	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
+	ibctestingcore "github.com/cosmos/interchain-security/v3/legacy_ibc_testing/core"
+	ibctesting "github.com/cosmos/interchain-security/v3/legacy_ibc_testing/testing"
 
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	appConsumer "github.com/cosmos/interchain-security/app/consumer"
-	appProvider "github.com/cosmos/interchain-security/app/provider"
+	appConsumer "github.com/cosmos/interchain-security/v3/app/consumer"
+	appProvider "github.com/cosmos/interchain-security/v3/app/provider"
 
-	"github.com/cosmos/interchain-security/testutil/simibc"
+	"github.com/cosmos/interchain-security/v3/testutil/simibc"
 
 	slashingkeeper "github.com/cosmos/cosmos-sdk/x/slashing/keeper"
 
-	consumerkeeper "github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
+	consumerkeeper "github.com/cosmos/interchain-security/v3/x/ccv/consumer/keeper"
 )
 
 type CoreSuite struct {

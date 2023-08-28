@@ -4,7 +4,7 @@ import (
 	sdkerrors "cosmossdk.io/errors"
 	ibctmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 
-	ccv "github.com/cosmos/interchain-security/x/ccv/types"
+	ccv "github.com/cosmos/interchain-security/v3/x/ccv/types"
 
 	abci "github.com/cometbft/cometbft/abci/types"
 )

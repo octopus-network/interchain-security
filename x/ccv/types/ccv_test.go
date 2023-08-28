@@ -8,7 +8,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keys/ed25519"
 	"github.com/stretchr/testify/require"
 
-	"github.com/cosmos/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/v3/x/ccv/types"
 )
 
 func TestPacketDataValidateBasic(t *testing.T) {

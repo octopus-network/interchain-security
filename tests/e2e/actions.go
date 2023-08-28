@@ -15,10 +15,10 @@ import (
 	clienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 	"github.com/tidwall/gjson"
 
-	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	consumertypes "github.com/cosmos/interchain-security/v3/x/ccv/consumer/types"
 
-	"github.com/cosmos/interchain-security/x/ccv/provider/client"
-	"github.com/cosmos/interchain-security/x/ccv/provider/types"
+	"github.com/cosmos/interchain-security/v3/x/ccv/provider/client"
+	"github.com/cosmos/interchain-security/v3/x/ccv/provider/types"
 )
 
 type SendTokensAction struct {

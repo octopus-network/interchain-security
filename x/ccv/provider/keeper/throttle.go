@@ -8,8 +8,8 @@ import (
 	tmtypes "github.com/cometbft/cometbft/types"
 	sdktypes "github.com/cosmos/cosmos-sdk/types"
 
-	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
-	ccvtypes "github.com/cosmos/interchain-security/x/ccv/types"
+	providertypes "github.com/cosmos/interchain-security/v3/x/ccv/provider/types"
+	ccvtypes "github.com/cosmos/interchain-security/v3/x/ccv/types"
 )
 
 // This file contains functionality relevant to the throttling of slash and vsc matured packets, aka circuit breaker logic.
@@ -402,9 +402,9 @@ func (k Keeper) GetLeadingVSCMaturedData(ctx sdktypes.Context, consumerChainID s
 // Thus, the returned array is in ascending order of ibc seq numbers.
 func (k Keeper) GetSlashAndTrailingData(ctx sdktypes.Context, consumerChainID string) (
 	slashFound bool, slashData ccvtypes.SlashPacketData, vscMaturedData []ccvtypes.VSCMaturedPacketData,
-	// Note: this slice contains the IBC sequence numbers of the slash packet data
-	// and trailing vsc matured packet data instances. This is used by caller to delete the
-	// data after it has been handled.
+// Note: this slice contains the IBC sequence numbers of the slash packet data
+// and trailing vsc matured packet data instances. This is used by caller to delete the
+// data after it has been handled.
 	ibcSeqNums []uint64,
 ) {
 	store := ctx.KVStore(k.storeKey)

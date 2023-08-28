@@ -7,10 +7,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	clienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 
-	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
-	testutil "github.com/cosmos/interchain-security/testutil/integration"
-	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
-	consumerkeeper "github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
+	ibctesting "github.com/cosmos/interchain-security/v3/legacy_ibc_testing/testing"
+	testutil "github.com/cosmos/interchain-security/v3/testutil/integration"
+	testkeeper "github.com/cosmos/interchain-security/v3/testutil/keeper"
+	consumerkeeper "github.com/cosmos/interchain-security/v3/x/ccv/consumer/keeper"
 
 	"github.com/stretchr/testify/suite"
 
