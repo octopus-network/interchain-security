@@ -86,20 +86,20 @@ import (
 	"github.com/rakyll/statik/fs"
 	"github.com/spf13/cast"
 
-	appparams "github.com/octopus-network/interchain-security/app/params"
-	ibctestingcore "github.com/octopus-network/interchain-security/legacy_ibc_testing/core"
-	ibctesting "github.com/octopus-network/interchain-security/legacy_ibc_testing/testing"
+	appparams "github.com/cosmos/interchain-security/app/params"
+	ibctestingcore "github.com/cosmos/interchain-security/legacy_ibc_testing/core"
+	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
 
 	tendermint "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 
-	ibcconsumer "github.com/octopus-network/interchain-security/x/ccv/consumer"
-	ibcconsumerkeeper "github.com/octopus-network/interchain-security/x/ccv/consumer/keeper"
-	ibcconsumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
+	ibcconsumer "github.com/cosmos/interchain-security/x/ccv/consumer"
+	ibcconsumerkeeper "github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
+	ibcconsumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"
 
-	testutil "github.com/octopus-network/interchain-security/testutil/integration"
+	testutil "github.com/cosmos/interchain-security/testutil/integration"
 )
 
 const (

@@ -7,8 +7,8 @@ import (
 	"cosmossdk.io/math"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	ibctesting "github.com/octopus-network/interchain-security/legacy_ibc_testing/testing"
-	icstestingutils "github.com/octopus-network/interchain-security/testutil/ibc_testing"
+	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
+	icstestingutils "github.com/cosmos/interchain-security/testutil/ibc_testing"
 
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
@@ -16,8 +16,8 @@ import (
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	"github.com/stretchr/testify/suite"
 
-	testutil "github.com/octopus-network/interchain-security/testutil/integration"
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
+	testutil "github.com/cosmos/interchain-security/testutil/integration"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
 )
 
 type ConsumerDemocracyTestSuite struct {

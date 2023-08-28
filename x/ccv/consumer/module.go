@@ -17,10 +17,10 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	porttypes "github.com/cosmos/ibc-go/v7/modules/core/05-port/types"
 
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/client/cli"
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/keeper"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/client/cli"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
 
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
 )
 
 var (

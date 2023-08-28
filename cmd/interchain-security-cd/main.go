@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	app "github.com/octopus-network/interchain-security/app/consumer"
-	"github.com/octopus-network/interchain-security/cmd/interchain-security-cd/cmd"
+	app "github.com/cosmos/interchain-security/app/consumer"
+	"github.com/cosmos/interchain-security/cmd/interchain-security-cd/cmd"
 )
 
 func main() {

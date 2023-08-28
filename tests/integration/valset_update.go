@@ -9,7 +9,7 @@ import (
 	clienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
 
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // TestPacketRoundtrip tests a CCV packet roundtrip when tokens are bonded on provider

@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/octopus-network/interchain-security/x/ccv/provider/types"
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/x/ccv/provider/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // InitGenesis initializes the CCV provider state and binds to PortID.

@@ -16,7 +16,7 @@ import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 	reflectionv1 "cosmossdk.io/api/cosmos/reflection/v1"
 
-	appparams "github.com/octopus-network/interchain-security/app/params"
+	appparams "github.com/cosmos/interchain-security/app/params"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -95,8 +95,8 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v7/modules/core/keeper"
 	tendermint "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 
-	ibctestingcore "github.com/octopus-network/interchain-security/legacy_ibc_testing/core"
-	ibctesting "github.com/octopus-network/interchain-security/legacy_ibc_testing/testing"
+	ibctestingcore "github.com/cosmos/interchain-security/legacy_ibc_testing/core"
+	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
 
 	dbm "github.com/cometbft/cometbft-db"
 	abci "github.com/cometbft/cometbft/abci/types"
@@ -107,12 +107,12 @@ import (
 	"github.com/rakyll/statik/fs"
 	"github.com/spf13/cast"
 
-	ibcprovider "github.com/octopus-network/interchain-security/x/ccv/provider"
-	ibcproviderclient "github.com/octopus-network/interchain-security/x/ccv/provider/client"
-	ibcproviderkeeper "github.com/octopus-network/interchain-security/x/ccv/provider/keeper"
-	providertypes "github.com/octopus-network/interchain-security/x/ccv/provider/types"
+	ibcprovider "github.com/cosmos/interchain-security/x/ccv/provider"
+	ibcproviderclient "github.com/cosmos/interchain-security/x/ccv/provider/client"
+	ibcproviderkeeper "github.com/cosmos/interchain-security/x/ccv/provider/keeper"
+	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
 
-	testutil "github.com/octopus-network/interchain-security/testutil/integration"
+	testutil "github.com/cosmos/interchain-security/testutil/integration"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"

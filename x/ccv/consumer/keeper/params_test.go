@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	testkeeper "github.com/octopus-network/interchain-security/testutil/keeper"
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // TestParams tests getters/setters for consumer params

@@ -8,8 +8,8 @@ import (
 	ibcclienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 	"github.com/stretchr/testify/require"
 
-	"github.com/octopus-network/interchain-security/app/consumer/ante"
-	"github.com/octopus-network/interchain-security/app/params"
+	"github.com/cosmos/interchain-security/app/consumer/ante"
+	"github.com/cosmos/interchain-security/app/params"
 )
 
 type consumerKeeper struct {

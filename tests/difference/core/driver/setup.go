@@ -19,7 +19,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	ibctesting "github.com/octopus-network/interchain-security/legacy_ibc_testing/testing"
+	ibctesting "github.com/cosmos/interchain-security/legacy_ibc_testing/testing"
 
 	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
@@ -34,15 +34,15 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
-	appConsumer "github.com/octopus-network/interchain-security/app/consumer"
-	appProvider "github.com/octopus-network/interchain-security/app/provider"
-	icstestingutils "github.com/octopus-network/interchain-security/testutil/ibc_testing"
-	"github.com/octopus-network/interchain-security/testutil/simibc"
-	consumerkeeper "github.com/octopus-network/interchain-security/x/ccv/consumer/keeper"
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	providerkeeper "github.com/octopus-network/interchain-security/x/ccv/provider/keeper"
+	appConsumer "github.com/cosmos/interchain-security/app/consumer"
+	appProvider "github.com/cosmos/interchain-security/app/provider"
+	icstestingutils "github.com/cosmos/interchain-security/testutil/ibc_testing"
+	"github.com/cosmos/interchain-security/testutil/simibc"
+	consumerkeeper "github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	providerkeeper "github.com/cosmos/interchain-security/x/ccv/provider/keeper"
 
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 type Builder struct {

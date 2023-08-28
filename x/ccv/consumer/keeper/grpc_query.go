@@ -7,7 +7,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/types"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/types"
 )
 
 var _ types.QueryServer = Keeper{}

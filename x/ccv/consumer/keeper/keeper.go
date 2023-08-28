@@ -22,8 +22,8 @@ import (
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // Keeper defines the Cross-Chain Validation Consumer Keeper

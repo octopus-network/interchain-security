@@ -9,8 +9,8 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/octopus-network/interchain-security/testutil/crypto"
-	uthelpers "github.com/octopus-network/interchain-security/testutil/keeper"
+	"github.com/cosmos/interchain-security/testutil/crypto"
+	uthelpers "github.com/cosmos/interchain-security/testutil/keeper"
 )
 
 func TestChangeoverToConsumer(t *testing.T) {

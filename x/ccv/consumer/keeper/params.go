@@ -6,8 +6,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	ccvtypes "github.com/octopus-network/interchain-security/x/ccv/types"
+	"github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	ccvtypes "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // GetParams returns the params for the consumer ccv module

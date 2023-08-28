@@ -9,8 +9,8 @@ import (
 	commitmenttypes "github.com/cosmos/ibc-go/v7/modules/core/23-commitment/types"
 	ibctmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
 
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	ccvtypes "github.com/octopus-network/interchain-security/x/ccv/types"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	ccvtypes "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 const (

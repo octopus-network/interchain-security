@@ -8,9 +8,9 @@ import (
 	ibcante "github.com/cosmos/ibc-go/v7/modules/core/ante"
 	ibckeeper "github.com/cosmos/ibc-go/v7/modules/core/keeper"
 
-	democracyante "github.com/octopus-network/interchain-security/app/consumer-democracy/ante"
-	consumerante "github.com/octopus-network/interchain-security/app/consumer/ante"
-	ibcconsumerkeeper "github.com/octopus-network/interchain-security/x/ccv/consumer/keeper"
+	democracyante "github.com/cosmos/interchain-security/app/consumer-democracy/ante"
+	consumerante "github.com/cosmos/interchain-security/app/consumer/ante"
+	ibcconsumerkeeper "github.com/cosmos/interchain-security/x/ccv/consumer/keeper"
 )
 
 // HandlerOptions extend the SDK's AnteHandler options by requiring the IBC

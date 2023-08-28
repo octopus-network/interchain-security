@@ -7,16 +7,16 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	host "github.com/cosmos/ibc-go/v7/modules/core/24-host"
 
-	"github.com/octopus-network/interchain-security/testutil/crypto"
-	testkeeper "github.com/octopus-network/interchain-security/testutil/keeper"
+	"github.com/cosmos/interchain-security/testutil/crypto"
+	testkeeper "github.com/cosmos/interchain-security/testutil/keeper"
 
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	consumertypes "github.com/octopus-network/interchain-security/x/ccv/consumer/types"
-	"github.com/octopus-network/interchain-security/x/ccv/provider/keeper"
-	providertypes "github.com/octopus-network/interchain-security/x/ccv/provider/types"
-	ccv "github.com/octopus-network/interchain-security/x/ccv/types"
+	consumertypes "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	"github.com/cosmos/interchain-security/x/ccv/provider/keeper"
+	providertypes "github.com/cosmos/interchain-security/x/ccv/provider/types"
+	ccv "github.com/cosmos/interchain-security/x/ccv/types"
 )
 
 // TestInitAndExportGenesis tests the export and the initialisation of a provider chain genesis
