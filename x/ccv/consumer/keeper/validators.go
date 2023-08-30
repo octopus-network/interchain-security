@@ -92,8 +92,18 @@ func (k Keeper) IsValidatorJailed(ctx sdk.Context, addr sdk.ConsAddress) bool {
 	return k.OutstandingDowntime(ctx, addr)
 }
 
+// GetValidatorByConsAddr get a single validator by consensus address
+func (k Keeper) GetValidatorByConsAddr(ctx sdk.Context, consAddr sdk.ConsAddress) (validator stakingtypes.Validator, found bool) {
+	val, found := k.GetCCValidator(ctx, consAddr)
+	if !found {
+		return validator, false
+	}
+	// The evm module will get the coinbase address by query the validator operator address
+	return stakingtypes.Validator{OperatorAddress: sdk.ValAddress(val.Address).String()}, true
+}
+
 // ValidatorByConsAddr returns an empty validator
-func (k Keeper) ValidatorByConsAddr(sdk.Context, sdk.ConsAddress) stakingtypes.ValidatorI {
+func (k Keeper) ValidatorByConsAddr(ctx sdk.Context, addr sdk.ConsAddress) stakingtypes.ValidatorI {
 	/*
 		NOTE:
 
@@ -104,7 +114,11 @@ func (k Keeper) ValidatorByConsAddr(sdk.Context, sdk.ConsAddress) stakingtypes.V
 		Also, the slashing module will cal lthis function when it observes downtime. In that case
 		the only requirement on the returned value is that it isn't null.
 	*/
-	return stakingtypes.Validator{}
+	val, found := k.GetValidatorByConsAddr(ctx, addr)
+	if !found {
+		return &stakingtypes.Validator{}
+	}
+	return val
 }
 
 // Calls SlashWithInfractionReason with Infraction_INFRACTION_UNSPECIFIED.
