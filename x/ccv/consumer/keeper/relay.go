@@ -169,7 +169,9 @@ func (k Keeper) QueueSlashPacket(ctx sdk.Context, validator abci.Validator, vals
 }
 
 func (k *Keeper) QueueNotifyRewardsPackets(ctx sdk.Context) {
-	packet := ccv.NewNotifyRewardsPacketData(ctx.BlockHeight())
+	height := uint64(ctx.BlockHeight())
+	vscId := k.GetHeightValsetUpdateID(ctx, height)
+	packet := ccv.NewNotifyRewardsPacketData(vscId, height)
 	k.AppendPendingPacket(ctx, ccv.ConsumerPacketData{
 		Type: ccv.NotifyRewardsPacket,
 		Data: &ccv.ConsumerPacketData_NotifyRewardsPacketData{NotifyRewardsPacketData: packet},

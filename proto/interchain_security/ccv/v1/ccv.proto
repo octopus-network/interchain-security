@@ -59,7 +59,8 @@ message MaturedUnbondingOps {
 }
 
 message NotifyRewardsPacketData {
-  int64 block_height = 1;
+  uint64 valset_update_id = 1;
+  uint64 block_height = 2;
 }
 
 // ConsumerPacketData contains a consumer packet data and a type tag
