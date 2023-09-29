@@ -25,6 +25,7 @@ func (k Keeper) EndBlockRD(ctx sdk.Context) {
 	newLtbh := types.LastTransmissionBlockHeight{
 		Height: ctx.BlockHeight(),
 	}
+	k.QueueNotifyRewardsPackets(ctx)
 	k.SetLastTransmissionBlockHeight(ctx, newLtbh)
 }
 

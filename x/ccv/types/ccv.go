@@ -110,8 +110,8 @@ func (cp ConsumerPacketData) GetBytes() []byte {
 	return bytes
 }
 
-func NewNotifyRewardsPacketData(blockHeight int64) *NotifyRewardsPacketData {
-	return &NotifyRewardsPacketData{BlockHeight: blockHeight}
+func NewNotifyRewardsPacketData(vscId, blockHeight uint64) *NotifyRewardsPacketData {
+	return &NotifyRewardsPacketData{ValsetUpdateId: vscId, BlockHeight: blockHeight}
 }
 
 func (n NotifyRewardsPacketData) ValidateBasic() error {
