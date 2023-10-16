@@ -2,7 +2,7 @@ package types
 
 import (
 	sdkerrors "cosmossdk.io/errors"
-	ibctmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/07-tendermint"
+	ibcsmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/06-solomachine"
 
 	ccv "github.com/cosmos/interchain-security/v3/x/ccv/types"
 
@@ -10,7 +10,7 @@ import (
 )
 
 // NewInitialGenesisState returns a consumer GenesisState for a completely new consumer chain.
-func NewInitialGenesisState(cs *ibctmtypes.ClientState, consState *ibctmtypes.ConsensusState,
+func NewInitialGenesisState(cs *ibcsmtypes.ClientState, consState *ibcsmtypes.ConsensusState,
 	initValSet []abci.ValidatorUpdate, params Params,
 ) *GenesisState {
 	return &GenesisState{

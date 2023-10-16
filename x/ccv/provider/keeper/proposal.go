@@ -256,7 +256,7 @@ func (k Keeper) MakeConsumerGenesis(
 	clientState.TrustingPeriod = trustPeriod
 	clientState.UnbondingPeriod = providerUnbondingPeriod
 
-	consState, err := k.clientKeeper.GetSelfConsensusState(ctx, height)
+	_, err = k.clientKeeper.GetSelfConsensusState(ctx, height)
 	if err != nil {
 		return gen, nil, sdkerrors.Wrapf(clienttypes.ErrConsensusStateNotFound, "error %s getting self consensus state for: %s", err, height)
 	}
@@ -315,8 +315,9 @@ func (k Keeper) MakeConsumerGenesis(
 	)
 
 	gen = *consumertypes.NewInitialGenesisState(
-		clientState,
-		consState.(*ibctmtypes.ConsensusState),
+		// TODO(roam) need to fix the compile error
+		nil,
+		nil,
 		initialUpdatesWithConsumerKeys,
 		consumerGenesisParams,
 	)
