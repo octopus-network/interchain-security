@@ -2,6 +2,7 @@ package types
 
 import (
 	sdkerrors "cosmossdk.io/errors"
+	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	ibcsmtypes "github.com/cosmos/ibc-go/v7/modules/light-clients/06-solomachine"
 
 	ccv "github.com/cosmos/interchain-security/v3/x/ccv/types"
@@ -155,6 +156,14 @@ func (gs GenesisState) Validate() error {
 		}
 	}
 	return nil
+}
+
+// UnpackInterfaces implements the UnpackInterfaceMessages.UnpackInterfaces method
+func (gs GenesisState) UnpackInterfaces(unpacker codectypes.AnyUnpacker) error {
+	if err := gs.ProviderClientState.UnpackInterfaces(unpacker); err != nil {
+		return err
+	}
+	return gs.ProviderConsensusState.UnpackInterfaces(unpacker)
 }
 
 func (mat MaturingVSCPacket) Validate() error {
