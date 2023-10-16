@@ -7,7 +7,7 @@ option go_package = "github.com/cosmos/interchain-security/v3/x/ccv/consumer/typ
 import "interchain_security/ccv/v1/ccv.proto";
 import "interchain_security/ccv/consumer/v1/consumer.proto";
 import "tendermint/abci/types.proto";
-import "ibc/lightclients/tendermint/v1/tendermint.proto";
+import "ibc/lightclients/solomachine/v3/solomachine.proto";
 import "ibc/core/channel/v1/channel.proto";
 import "google/protobuf/duration.proto";
 import "gogoproto/gogo.proto";
@@ -19,9 +19,9 @@ message GenesisState {
   string provider_channel_id = 3; // empty for a new chain, filled in on restart.
   bool new_chain = 4; // true for new chain GenesisState, false for chain restart.
   // ProviderClientState filled in on new chain, nil on restart.
-  ibc.lightclients.tendermint.v1.ClientState provider_client_state = 5;
+  ibc.lightclients.solomachine.v3.ClientState provider_client_state = 5;
   // ProviderConsensusState filled in on new chain, nil on restart.
-  ibc.lightclients.tendermint.v1.ConsensusState provider_consensus_state = 6;
+  ibc.lightclients.solomachine.v3.ConsensusState provider_consensus_state = 6;
   // MaturingPackets nil on new chain, filled in on restart.
   repeated interchain_security.ccv.consumer.v1.MaturingVSCPacket maturing_packets = 7
       [ (gogoproto.nullable) = false ];
