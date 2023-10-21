@@ -17,7 +17,6 @@ import (
 
 	"github.com/cosmos/interchain-security/v3/x/ccv/consumer/keeper"
 	consumertypes "github.com/cosmos/interchain-security/v3/x/ccv/consumer/types"
-	providertypes "github.com/cosmos/interchain-security/v3/x/ccv/provider/types"
 	"github.com/cosmos/interchain-security/v3/x/ccv/types"
 )
 
@@ -118,7 +117,7 @@ func (am AppModule) OnChanOpenAck(
 	portID,
 	channelID string,
 	_ string, // Counter party channel ID is unused per spec
-	counterpartyMetadata string,
+	counterpartyVersion string,
 ) error {
 	// ensure provider channel has not already been created
 	if providerChannel, ok := am.keeper.GetProviderChannel(ctx); ok {
@@ -126,18 +125,10 @@ func (am AppModule) OnChanOpenAck(
 			"provider channel: %s already established", providerChannel)
 	}
 
-	var md providertypes.HandshakeMetadata
-	if err := (&md).Unmarshal([]byte(counterpartyMetadata)); err != nil {
-		return sdkerrors.Wrapf(types.ErrInvalidHandshakeMetadata,
-			"error unmarshalling ibc-ack metadata: \n%v; \nmetadata: %v", err, counterpartyMetadata)
-	}
-
-	if md.Version != types.Version {
+	if counterpartyVersion != types.Version {
 		return sdkerrors.Wrapf(types.ErrInvalidVersion,
-			"invalid counterparty version: %s, expected %s", md.Version, types.Version)
+			"invalid counterparty version: %s, expected %s", counterpartyVersion, types.Version)
 	}
-
-	am.keeper.SetProviderFeePoolAddrStr(ctx, md.ProviderFeePoolAddr)
 
 	// /////////////////////////////////////////////////
 	// Initialize distribution token transfer channel
