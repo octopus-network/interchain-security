@@ -160,10 +160,15 @@ func (gs GenesisState) Validate() error {
 
 // UnpackInterfaces implements the UnpackInterfaceMessages.UnpackInterfaces method
 func (gs GenesisState) UnpackInterfaces(unpacker codectypes.AnyUnpacker) error {
-	if err := gs.ProviderClientState.UnpackInterfaces(unpacker); err != nil {
-		return err
+	if gs.ProviderClientState != nil {
+		if err := gs.ProviderClientState.UnpackInterfaces(unpacker); err != nil {
+			return err
+		}
 	}
-	return gs.ProviderConsensusState.UnpackInterfaces(unpacker)
+	if gs.ProviderClientState != nil {
+		return gs.ProviderConsensusState.UnpackInterfaces(unpacker)
+	}
+	return nil
 }
 
 func (mat MaturingVSCPacket) Validate() error {
