@@ -81,20 +81,7 @@ func (am AppModule) OnChanOpenTry(
 		return "", err
 	}
 
-	md := providertypes.HandshakeMetadata{
-		// NOTE that the fee pool collector address string provided to the
-		// the consumer chain must be excluded from the blocked addresses
-		// blacklist or all all ibc-transfers from the consumer chain to the
-		// provider chain will fail
-		ProviderFeePoolAddr: am.keeper.GetFeeCollectorAddressStr(ctx),
-		Version:             ccv.Version,
-	}
-	mdBz, err := (&md).Marshal()
-	if err != nil {
-		return "", sdkerrors.Wrapf(ccv.ErrInvalidHandshakeMetadata,
-			"error marshalling ibc-try metadata: %v", err)
-	}
-	return string(mdBz), nil
+	return ccv.Version, nil
 }
 
 // validateCCVChannelParams validates a ccv channel
