@@ -9,7 +9,6 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	capabilitytypes "github.com/cosmos/cosmos-sdk/x/capability/types"
-	transfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
 	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
 	porttypes "github.com/cosmos/ibc-go/v7/modules/core/05-port/types"
 	host "github.com/cosmos/ibc-go/v7/modules/core/24-host"
@@ -143,42 +142,6 @@ func (am AppModule) OnChanOpenAck(
 			return nil
 		}
 	}
-
-	// NOTE The handshake for this channel is handled by the ibc-go/transfer
-	// module. If the transfer-channel fails here (unlikely) then the transfer
-	// channel should be manually created and ccv parameters set accordingly.
-
-	// reuse the connection hops for this channel for the
-	// transfer channel being created.
-	connHops, err := am.keeper.GetConnectionHops(ctx, portID, channelID)
-	if err != nil {
-		return err
-	}
-
-	distrTransferMsg := channeltypes.NewMsgChannelOpenInit(
-		transfertypes.PortID,
-		transfertypes.Version,
-		channeltypes.UNORDERED,
-		connHops,
-		transfertypes.PortID,
-		"", // signer unused
-	)
-
-	resp, err := am.keeper.ChannelOpenInit(ctx, distrTransferMsg)
-	if err != nil {
-		return err
-	}
-	am.keeper.SetDistributionTransmissionChannel(ctx, resp.ChannelId)
-
-	ctx.EventManager().EmitEvent(
-		sdk.NewEvent(
-			types.EventTypeFeeTransferChannelOpened,
-			sdk.NewAttribute(sdk.AttributeKeyModule, consumertypes.ModuleName),
-			sdk.NewAttribute(channeltypes.AttributeKeyChannelID, channelID),
-			sdk.NewAttribute(channeltypes.AttributeKeyPortID, transfertypes.PortID),
-		),
-	)
-
 	return nil
 }
 
